@@ -3,6 +3,12 @@ import PrismicScript from '../components/PrismicScript'
 import { reset, globals } from 'styles'
 
 class MyDocument extends Document {
+
+  static async getInitialProps(ctx) {	
+    const initialProps = await Document.getInitialProps(ctx)	
+    return { ...initialProps }	
+  }
+  
   render() {
     return (
       <Html>
